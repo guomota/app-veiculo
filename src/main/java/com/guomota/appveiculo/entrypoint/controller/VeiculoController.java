@@ -45,10 +45,10 @@ public class VeiculoController {
 	 * 
 	 * @return {@code ResponseEntity<VeiculoModelResponse>} - dados do veículo pesquisado
 	 */
-	@GetMapping
-	public ResponseEntity<VeiculoModelResponse> buscarVeiculo(@PathVariable Long id) {
+	@GetMapping("/{id}")
+	public ResponseEntity<String> buscarVeiculo(@PathVariable Long id) {
 
-		return null;
+		return ResponseEntity.ok(new String("Implemeta o negocio, animal"));
 
 	}
 }
