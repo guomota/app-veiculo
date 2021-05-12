@@ -1,7 +1,7 @@
-package com.guomota.appveiculo.entrypoint.model.request;
+package com.guomota.appveiculo.usecase.model;
 
-public class VeiculoModelRequest {
-
+public class VeiculoDomain {
+	
 	private String placa;
 	private String marca;
 	private String modelo;
