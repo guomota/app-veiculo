@@ -1,7 +1,5 @@
 package com.guomota.appveiculo.entrypoint.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.guomota.appveiculo.entrypoint.model.request.VeiculoModelRequest;
 import com.guomota.appveiculo.entrypoint.model.response.VeiculoModelResponse;
+import com.guomota.appveiculo.entrypoint.valitdation.BuscarVeiculoValidation;
 
 /**
  * Classe responsável por conter as rotas referente ao veículo
@@ -32,10 +31,9 @@ public class VeiculoController {
 	 */
 	@PostMapping
 	public ResponseEntity<VeiculoModelResponse> cadastrarVeiculo(
-			@RequestBody @Valid VeiculoModelRequest veiculoModelRequest) {
+			@RequestBody VeiculoModelRequest veiculoModelRequest) {
 
 		return null;
-
 	}
 
 	/**
@@ -46,9 +44,10 @@ public class VeiculoController {
 	 * @return {@code ResponseEntity<VeiculoModelResponse>} - dados do veículo pesquisado
 	 */
 	@GetMapping("/{id}")
-	public ResponseEntity<String> buscarVeiculo(@PathVariable Long id) {
-
+	public ResponseEntity<String> buscarVeiculo(@PathVariable String id) {
+		
+		BuscarVeiculoValidation.validaIdVeiculo(id);
+		
 		return ResponseEntity.ok(new String("Implemeta o negocio, animal"));
-
 	}
 }
