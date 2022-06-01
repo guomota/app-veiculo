@@ -1,12 +1,5 @@
 package com.guomota.appveiculo.entrypoint.model.response;
 
-/**
- * 
- * 
- * @author Gustavo Oliveira Mota
- * @since 12/05/2021
- *
- */
 public class VeiculoModelResponse {
 
 	private String placa;

@@ -12,23 +12,10 @@ import com.guomota.appveiculo.entrypoint.model.request.VeiculoModelRequest;
 import com.guomota.appveiculo.entrypoint.model.response.VeiculoModelResponse;
 import com.guomota.appveiculo.entrypoint.valitdation.BuscarVeiculoValidation;
 
-/**
- * Classe responsável por conter as rotas referente ao veículo
- * 
- * @author Gustavo Oliveira Mota
- * @since 12/05/2021
- */
 @RestController
 @RequestMapping("/veiculos")
 public class VeiculoController {
 
-	/**
-	 * Método responsável por cadastrar um veículo no banco de dados
-	 * 
-	 * @param {@code VeiculoModelRequest} - dados do veiculo a ser salvo
-	 * 
-	 * @return {@code ResponseEntity<VeiculoModelResponse>} - dados do veículo salvo
-	 */
 	@PostMapping
 	public ResponseEntity<VeiculoModelResponse> cadastrarVeiculo(
 			@RequestBody VeiculoModelRequest veiculoModelRequest) {
@@ -36,18 +23,10 @@ public class VeiculoController {
 		return null;
 	}
 
-	/**
-	 * Método responsável por buscar um veiculo cadastrado na base a partir de seu id
-	 * 
-	 * @param {@code Long} - id do carro
-	 * 
-	 * @return {@code ResponseEntity<VeiculoModelResponse>} - dados do veículo pesquisado
-	 */
 	@GetMapping("/{id}")
 	public ResponseEntity<String> buscarVeiculo(@PathVariable String id) {
 		
 		BuscarVeiculoValidation.validaIdVeiculo(id);
-		
 		return ResponseEntity.ok(new String("Implemeta o negocio, animal"));
 	}
 }
