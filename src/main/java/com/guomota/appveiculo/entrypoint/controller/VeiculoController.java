@@ -25,7 +25,6 @@ public class VeiculoController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<String> buscarVeiculo(@PathVariable String id) {
-		
 		BuscarVeiculoValidation.validaIdVeiculo(id);
 		return ResponseEntity.ok(new String("Implemeta o negocio, animal"));
 	}
