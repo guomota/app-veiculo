@@ -17,7 +17,7 @@ import com.guomota.appveiculo.usecase.model.VeiculoDomain;
  * @author Gustavo Oliveira Mota
  * @since 12/05/2021
  */
-public class VeiculoMapperTest {
+public class VeiculoEntityMapperTest {
 	
 	/**
 	 * Método responsável pelo teste de sucesso
